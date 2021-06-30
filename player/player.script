@@ -1,0 +1,80 @@
+local accleration = 300
+local travel = 350
+local speed = 120
+
+function init(self)
+	msg.post(".", "acquire_input_focus")
+	self.velocity = 0
+	self.ds = 0
+	self.point = 0
+	self.coin = 0	-- to be implemented
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	self.ds = self.ds + speed * dt
+	if self.ds > 350 then
+		self.ds = 0
+		self.point = self.point + 1
+		label.set_text("/point#point_lobel", tostring(self.point) .. "\n" .. tostring(self.coin))
+	end
+
+	local p = go.get_position()
+
+	-- s = ut +0.5*a*t^2
+	local y = self.velocity*dt + 0.5*accleration*dt*dt
+
+	-- v = u + a*t
+	self.velocity = self.velocity + accleration*dt
+
+	go.set_position(p - vmath.vector3(0, y, 0))
+
+	accleration = 300
+
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("trigger_response") and message.enter == true then
+		self.coin = self.coin + 1
+		label.set_text("/point#point_lobel", self.point .. "\n" .. self.coin)
+		msg.post(message.other_id, "play_animation", { id=hash("alpha")})
+	end
+
+	if message_id == hash("collision_response") and string.find(tostring(message.other_id),"coin") == nil then
+		self.velocity = 0
+		accleration = 0
+		speed = 0
+
+		msg.post("/wall1", "game_over")
+		msg.post("/wall2", "game_over")
+		msg.post("/wall3", "game_over")
+		msg.post("/wall4", "game_over")
+		msg.post("/wall5", "game_over")
+		msg.post("/wall6", "game_over")
+
+		msg.post("/coin1", "game_over")
+		msg.post("/coin2", "game_over")
+		msg.post("/coin3", "game_over")
+		msg.post("/coin4", "game_over")
+		msg.post("/coin5", "game_over")
+		msg.post("/coin6", "game_over")
+	end
+
+end
+
+function on_input(self, action_id, action)
+	if action_id == hash("touch") then
+		accleration = -1000
+	end
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Learn more: https://defold.com/manuals/hot-reload/
+	-- Remove this function if not needed
+end
