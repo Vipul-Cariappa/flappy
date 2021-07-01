@@ -50,19 +50,19 @@ function on_message(self, message_id, message, sender)
 		accleration = 0
 		speed = 0
 
-		msg.post("/wall1", "game_over")
-		msg.post("/wall2", "game_over")
-		msg.post("/wall3", "game_over")
-		msg.post("/wall4", "game_over")
-		msg.post("/wall5", "game_over")
-		msg.post("/wall6", "game_over")
+		msg.post("walls/wall1", "game_over")
+		msg.post("walls/wall2", "game_over")
+		msg.post("walls/wall3", "game_over")
+		msg.post("walls/wall4", "game_over")
+		msg.post("walls/wall5", "game_over")
+		msg.post("walls/wall6", "game_over")
 
-		msg.post("/coin1", "game_over")
-		msg.post("/coin2", "game_over")
-		msg.post("/coin3", "game_over")
-		msg.post("/coin4", "game_over")
-		msg.post("/coin5", "game_over")
-		msg.post("/coin6", "game_over")
+		msg.post("coins/coin1", "game_over")
+		msg.post("coins/coin2", "game_over")
+		msg.post("coins/coin3", "game_over")
+		msg.post("coins/coin4", "game_over")
+		msg.post("coins/coin5", "game_over")
+		msg.post("coins/coin6", "game_over")
 	end
 
 end

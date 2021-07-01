@@ -1,13 +1,13 @@
 local speed = 120
-local startx = 350*3
+local startx = 0
 local restartx = 1400
 
 function init(self)
 	local randomy = math.random(-100, 100)
 	local y1 = randomy - 1200/2
 	local y2 = randomy + 1200/2 + 100
-	go.set_position(vmath.vector3(startx, y1, 0), "/wall4a")
-	go.set_position(vmath.vector3(startx, y2, 0), "/wall4b")
+	go.set_position(vmath.vector3(startx, y1, 0), "wall1a")
+	go.set_position(vmath.vector3(startx, y2, 0), "wall1b")
 end
 
 function final(self)
@@ -18,18 +18,18 @@ end
 
 function update(self, dt)
 
-	local p1 = go.get_position("/wall4a")
-	go.set_position(p1 + vmath.vector3(-speed*dt, 0, 0), "/wall4a")
+	local p1 = go.get_position("wall1a")
+	go.set_position(p1 + vmath.vector3(-speed*dt, 0, 0), "wall1a")
 
-	local p2 = go.get_position("/wall4b")
-	go.set_position(p2 + vmath.vector3(-speed*dt, 0, 0), "/wall4b")
+	local p2 = go.get_position("wall1b")
+	go.set_position(p2 + vmath.vector3(-speed*dt, 0, 0), "wall1b")
 
 	if p1.x < -700 then
 		local randomy = math.random(-100, 100)
 		local y1 = randomy - 1200/2
 		local y2 = randomy + 1200/2 + 100
-		go.set_position(vmath.vector3(restartx, y1, 0), "/wall4a")
-		go.set_position(vmath.vector3(restartx, y2, 0), "/wall4b")
+		go.set_position(vmath.vector3(restartx, y1, 0), "wall1a")
+		go.set_position(vmath.vector3(restartx, y2, 0), "wall1b")
 	end
 
 end

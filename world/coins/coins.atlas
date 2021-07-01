@@ -1,12 +1,4 @@
 images {
-  image: "/asset/player.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-}
-images {
-  image: "/asset/wall.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-}
-images {
   image: "/asset/coin.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
