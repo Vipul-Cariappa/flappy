@@ -14,7 +14,7 @@ debug.keystore
 debug.keystore.pass.txt
 
 # asset
-asset/
+# asset/
 
 # release
 release/
