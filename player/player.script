@@ -1,6 +1,9 @@
+require "player/score"
+
 local accleration = 300
 local travel = 350
 local speed = 120
+local game_over = false
 
 function init(self)
 	msg.post(".", "acquire_input_focus")
@@ -45,7 +48,10 @@ function on_message(self, message_id, message, sender)
 		msg.post(message.other_id, "play_animation", { id=hash("alpha")})
 	end
 
-	if message_id == hash("collision_response") and string.find(tostring(message.other_id),"coin") == nil then
+	if message_id == hash("collision_response") and string.find(tostring(message.other_id),"coin") == nil and game_over == false then
+
+		game_over = true
+
 		self.velocity = 0
 		accleration = 0
 		speed = 0
@@ -63,6 +69,10 @@ function on_message(self, message_id, message, sender)
 		msg.post("coins/coin4", "game_over")
 		msg.post("coins/coin5", "game_over")
 		msg.post("coins/coin6", "game_over")
+
+		-- save game status
+		gameWrite(self.point, self.coin)
+
 	end
 
 end
