@@ -10,8 +10,11 @@ end
 
 local function load_game(self)
 	msg.post("collections#game", "load")
-	msg.post("collections#game", "init")
 	msg.post("collections#game", "enable")
+end
+
+local function unload_game(self)
+	msg.post("collections#game", "unload")
 end
 
 function init(self)
@@ -23,5 +26,10 @@ function on_message(self, message_id, message, sender)
 	if message_id == hash("start_game") then
 		unload_menu(self)
 		load_game(self)
+	end
+
+	if message_id == hash("show_menu") then
+		unload_game(self)
+		load_menu(self)
 	end
 end
