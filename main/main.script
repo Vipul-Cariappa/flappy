@@ -17,19 +17,57 @@ local function unload_game(self)
 	msg.post("collections#game", "unload")
 end
 
+local function load_setting(self)
+	msg.post("collections#setting", "load")
+	msg.post("collections#setting", "enable")
+end
+
+local function unload_setting(self)
+	msg.post("collections#setting","unload")
+end
+
+local function load_store(self)
+	msg.post("collections#store", "load")
+	msg.post("collections#store", "enable")
+end
+
+local function unload_store(self)
+	msg.post("collections#store","unload")
+end
+
 function init(self)
 	msg.post(".", "acquire_input_focus")
 	load_menu(self)
+
+	-- music
+	sound.play("music#sound", { gain = 1.0, pan = 0 })
+
 end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("start_game") then
 		unload_menu(self)
 		load_game(self)
-	end
 
-	if message_id == hash("show_menu") then
-		unload_game(self)
-		load_menu(self)
+	elseif message_id == hash("show_menu") then
+		if sender.fragment == hash("game") then
+			unload_game(self)
+			load_menu(self)
+		elseif sender.fragment == hash("setting") then
+			unload_setting(self)
+			load_menu(self)
+		elseif sender.fragment == hash("store") then
+			unload_store(self)
+			load_menu(self)
+		end
+
+	elseif message_id == hash("show_setting") then
+		unload_menu(self)
+		load_setting(self)
+
+	elseif message_id == hash("show_store") then
+		unload_menu(self)
+		load_store(self)
 	end
+	
 end

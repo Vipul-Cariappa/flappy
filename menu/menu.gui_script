@@ -16,15 +16,22 @@ end
 
 function on_input(self, action_id, action)
 	if(action_id == hash("touch") and action.released == true) then
-		local textBegin = gui.get_node("newGame")
-		if(gui.pick_node(textBegin,action.x,action.y)) then
+		local newGame = gui.get_node("newGame")
+		local setting = gui.get_node("setting")
+		local store = gui.get_node("store")
+		local back = gui.get_node("back")
+		
+		if(gui.pick_node(newGame, action.x, action.y)) then
 			msg.post("main:/collections#main", "start_game")
 		end
-	end
-	if(action_id == hash("touch") and action.released == true) then
-		-- local textExit = gui.get_node("textExitGame")
-		-- if(gui.pick_node(textExit,action.x,action.y)) then
-		-- 	msg.post("@system:", "exit", {code = 0})
-		-- end
-	end    
+		if(gui.pick_node(setting, action.x, action.y)) then
+			msg.post("main:/collections#main", "show_setting")
+		end
+		if(gui.pick_node(store, action.x, action.y)) then
+			msg.post("main:/collections#main", "show_store")
+		end
+		if(gui.pick_node(back, action.x, action.y)) then
+			sys.exit(0)
+		end
+	end  
 end

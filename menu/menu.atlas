@@ -1,9 +1,9 @@
 images {
-  image: "/asset/bg/alpha.png"
+  image: "/asset/setting.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/asset/coin/coin.png"
+  image: "/asset/back.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 margin: 0
