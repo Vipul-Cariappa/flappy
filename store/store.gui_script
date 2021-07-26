@@ -1,3 +1,5 @@
+require "main/theme"
+
 function init(self)
 	msg.post(".", "acquire_input_focus")
 end
@@ -23,9 +25,24 @@ end
 function on_input(self, action_id, action)
 	if(action_id == hash("touch") and action.released == true) then
 		local back = gui.get_node("back")
+		local dark = gui.get_node("dark")
+		local light = gui.get_node("light")
+		local rainbow = gui.get_node("rainbow")
 
 		if(gui.pick_node(back, action.x, action.y)) then
 			msg.post("main:/collections#main", "show_menu")
+		end
+
+		if(gui.pick_node(dark, action.x, action.y)) then
+			set_theme(1)
+		end
+
+		if(gui.pick_node(light, action.x, action.y)) then
+			set_theme(2)
+		end
+
+		if(gui.pick_node(rainbow, action.x, action.y)) then
+			set_theme(3)
 		end
 	end
 end

@@ -3,6 +3,18 @@ local startx = 350*3
 local restartx = 1400
 
 function init(self)
+	local theme = get_theme()
+
+	if theme == 1 then
+		msg.post("#sprite", "play_animation", { id=hash("white_solid")})
+
+	elseif theme == 2 then
+		msg.post("#sprite", "play_animation", { id=hash("black_solid")})
+
+	elseif theme == 3 then
+		msg.post("#sprite", "play_animation", { id=hash("green_solid")})
+	end
+	
 	local randomy = math.random(-100, 100)
 	go.set_position(vmath.vector3(startx, randomy, 0), "wall4")
 end

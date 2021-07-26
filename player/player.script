@@ -1,4 +1,5 @@
 require "player/score"
+require "main/theme"
 
 local accleration = 300
 local travel = 350
@@ -6,17 +7,31 @@ local speed = 120
 local game_over = false
 
 function init(self)
+	local theme = get_theme()
+
+	if theme == 1 then
+		msg.post("#sprite", "play_animation", { id=hash("white_solid")})
+		msg.post("@render:", "clear_color", {color=vmath.vector4(0, 0, 0, 0)})
+
+	elseif theme == 2 then
+		msg.post("#sprite", "play_animation", { id=hash("black_solid")})
+		msg.post("@render:", "clear_color", {color=vmath.vector4(1, 1, 1, 0)})
+
+	elseif theme == 3 then
+		msg.post("#sprite", "play_animation", { id=hash("grey_solid")})
+		msg.post("@render:", "clear_color", {color=vmath.vector4(1, 1, 1, 0)})
+	end
+		
 	msg.post(".", "acquire_input_focus")
 	self.velocity = 0
 	self.ds = 0
 	self.point = 0
 	self.coin = 0
+
 end
 
 function final(self)
-	-- Add finalization code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
+	msg.post("@render:", "clear_color", {color=vmath.vector4(0, 0, 0, 0)})
 end
 
 function update(self, dt)

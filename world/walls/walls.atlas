@@ -27,7 +27,7 @@ images {
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/asset/wall/solid_yellow.png"
+  image: "/asset/wall/yellow_solid.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
