@@ -1,9 +1,9 @@
 images {
-  image: "/asset/setting.png"
+  image: "/asset/other/setting.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
-  image: "/asset/back.png"
+  image: "/asset/other/back.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 margin: 0

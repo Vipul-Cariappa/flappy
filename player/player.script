@@ -1,25 +1,26 @@
 require "player/score"
 require "main/theme"
+require "main/constent"
 
 local accleration = 300
 local travel = 350
 local speed = 120
 local game_over = false
 
-function init(self)
+function init(self)	
 	local theme = get_theme()
 
 	if theme == 1 then
-		msg.post("#sprite", "play_animation", { id=hash("white_solid")})
-		msg.post("@render:", "clear_color", {color=vmath.vector4(0, 0, 0, 0)})
+		go.set("#sprite", "tint", WHITE)
+		msg.post("@render:", "clear_color", {color=BLACK})
 
 	elseif theme == 2 then
-		msg.post("#sprite", "play_animation", { id=hash("black_solid")})
-		msg.post("@render:", "clear_color", {color=vmath.vector4(1, 1, 1, 0)})
+		go.set("#sprite", "tint", BLACK)
+		msg.post("@render:", "clear_color", {color=WHITE})
 
 	elseif theme == 3 then
-		msg.post("#sprite", "play_animation", { id=hash("grey_solid")})
-		msg.post("@render:", "clear_color", {color=vmath.vector4(1, 1, 1, 0)})
+		go.set("#sprite", "tint", GREY)
+		msg.post("@render:", "clear_color", {color=WHITE})
 	end
 		
 	msg.post(".", "acquire_input_focus")
@@ -77,6 +78,7 @@ function on_message(self, message_id, message, sender)
 		msg.post("walls/wall4", "game_over")
 		msg.post("walls/wall5", "game_over")
 		msg.post("walls/wall6", "game_over")
+		msg.post("walls/wall7", "game_over")
 
 		msg.post("coins/coin1", "game_over")
 		msg.post("coins/coin2", "game_over")

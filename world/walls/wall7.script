@@ -1,10 +1,24 @@
+require "main/constent"
+
 local speed = 120
-local startx = 175 + 4*350
-local restartx = 1400
+local startx = 350*6
+local restartx = 1750
 
 function init(self)
-	local rand = math.random(-100, 100)
-	go.set_position(vmath.vector3(startx, rand, 0))
+	local theme = get_theme()
+
+	if theme == 1 then
+		go.set("#sprite", "tint", WHITE)
+
+	elseif theme == 2 then
+		go.set("#sprite", "tint", BLACK)
+
+	elseif theme == 3 then
+		go.set("#sprite", "tint", VIOLET)
+	end
+
+	local randomy = math.random(-100, 100)
+	go.set_position(vmath.vector3(startx, randomy, 0), "wall7")
 end
 
 function final(self)
@@ -14,13 +28,14 @@ function final(self)
 end
 
 function update(self, dt)
-	local p = go.get_position()
-	go.set_position(p + vmath.vector3(-speed*dt, 0, 0))
 
-	if p.x < -700 then
-		local rand = math.random(-100, 100)
-		go.set_position(vmath.vector3(restartx, rand, 0))
-		msg.post("#sprite", "play_animation", { id=hash("white_solid")})
+	local p1 = go.get_position("wall7")
+	go.set_position(p1 + vmath.vector3(-speed*dt, 0, 0), "wall7")
+
+
+	if p1.x < -700 then
+		local randomy = math.random(-100, 100)
+		go.set_position(vmath.vector3(restartx, randomy, 0), "wall7")
 	end
 
 end

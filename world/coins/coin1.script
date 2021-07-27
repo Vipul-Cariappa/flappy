@@ -20,7 +20,7 @@ function update(self, dt)
 	if p.x < -700 then
 		local rand = math.random(-100, 100)
 		go.set_position(vmath.vector3(restartx, rand, 0))
-		msg.post("#sprite", "play_animation", { id=hash("gold_solid")})
+		msg.post("#sprite", "play_animation", { id=hash("white_solid")})
 	end
 	
 end

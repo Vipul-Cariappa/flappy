@@ -64,7 +64,7 @@ embedded_components {
   id: "sprite"
   type: "sprite"
   data: "tile_set: \"/player/player.atlas\"\n"
-  "default_animation: \"blue_solid\"\n"
+  "default_animation: \"white_solid\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   ""

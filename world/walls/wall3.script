@@ -1,18 +1,20 @@
+require "main/constent"
+
 local speed = 120
 local startx = 350*2
-local restartx = 1400
+local restartx = 1750
 
 function init(self)
 	local theme = get_theme()
 
 	if theme == 1 then
-		msg.post("#sprite", "play_animation", { id=hash("white_solid")})
+		go.set("#sprite", "tint", WHITE)
 
 	elseif theme == 2 then
-		msg.post("#sprite", "play_animation", { id=hash("black_solid")})
+		go.set("#sprite", "tint", BLACK)
 
 	elseif theme == 3 then
-		msg.post("#sprite", "play_animation", { id=hash("yellow_solid")})
+		go.set("#sprite", "tint", YELLOW)
 	end
 	
 	local randomy = math.random(-100, 100)

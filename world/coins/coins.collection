@@ -44,7 +44,7 @@ embedded_instances {
   "    index: 0\\n"
   "    count: 1\\n"
   "  }\\n"
-  "  data: 128.0\\n"
+  "  data: 50.0\\n"
   "}\\n"
   "linear_damping: 0.0\\n"
   "angular_damping: 0.0\\n"
@@ -66,7 +66,7 @@ embedded_instances {
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/world/coins/coins.atlas\\\"\\n"
-  "default_animation: \\\"gold_solid\\\"\\n"
+  "default_animation: \\\"white_solid\\\"\\n"
   "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
@@ -95,15 +95,15 @@ embedded_instances {
     w: 1.0
   }
   scale3 {
-    x: 0.1
-    y: 0.1
+    x: 0.25
+    y: 0.25
     z: 1.0
   }
 }
 embedded_instances {
   id: "coin2"
   data: "components {\n"
-  "  id: \"coin1\"\n"
+  "  id: \"coin2\"\n"
   "  component: \"/world/coins/coin2.script\"\n"
   "  position {\n"
   "    x: 0.0\n"
@@ -144,7 +144,7 @@ embedded_instances {
   "    index: 0\\n"
   "    count: 1\\n"
   "  }\\n"
-  "  data: 128.0\\n"
+  "  data: 50.0\\n"
   "}\\n"
   "linear_damping: 0.0\\n"
   "angular_damping: 0.0\\n"
@@ -166,7 +166,7 @@ embedded_instances {
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/world/coins/coins.atlas\\\"\\n"
-  "default_animation: \\\"gold_solid\\\"\\n"
+  "default_animation: \\\"white_solid\\\"\\n"
   "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
@@ -195,15 +195,15 @@ embedded_instances {
     w: 1.0
   }
   scale3 {
-    x: 0.1
-    y: 0.1
+    x: 0.25
+    y: 0.25
     z: 1.0
   }
 }
 embedded_instances {
   id: "coin3"
   data: "components {\n"
-  "  id: \"coin1\"\n"
+  "  id: \"coin3\"\n"
   "  component: \"/world/coins/coin3.script\"\n"
   "  position {\n"
   "    x: 0.0\n"
@@ -244,7 +244,7 @@ embedded_instances {
   "    index: 0\\n"
   "    count: 1\\n"
   "  }\\n"
-  "  data: 128.0\\n"
+  "  data: 50.0\\n"
   "}\\n"
   "linear_damping: 0.0\\n"
   "angular_damping: 0.0\\n"
@@ -266,7 +266,7 @@ embedded_instances {
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/world/coins/coins.atlas\\\"\\n"
-  "default_animation: \\\"gold_solid\\\"\\n"
+  "default_animation: \\\"white_solid\\\"\\n"
   "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
@@ -295,15 +295,15 @@ embedded_instances {
     w: 1.0
   }
   scale3 {
-    x: 0.1
-    y: 0.1
+    x: 0.25
+    y: 0.25
     z: 1.0
   }
 }
 embedded_instances {
   id: "coin4"
   data: "components {\n"
-  "  id: \"coin1\"\n"
+  "  id: \"coin4\"\n"
   "  component: \"/world/coins/coin4.script\"\n"
   "  position {\n"
   "    x: 0.0\n"
@@ -344,7 +344,7 @@ embedded_instances {
   "    index: 0\\n"
   "    count: 1\\n"
   "  }\\n"
-  "  data: 128.0\\n"
+  "  data: 50.0\\n"
   "}\\n"
   "linear_damping: 0.0\\n"
   "angular_damping: 0.0\\n"
@@ -366,7 +366,7 @@ embedded_instances {
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/world/coins/coins.atlas\\\"\\n"
-  "default_animation: \\\"gold_solid\\\"\\n"
+  "default_animation: \\\"white_solid\\\"\\n"
   "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
@@ -395,15 +395,15 @@ embedded_instances {
     w: 1.0
   }
   scale3 {
-    x: 0.1
-    y: 0.1
+    x: 0.25
+    y: 0.25
     z: 1.0
   }
 }
 embedded_instances {
   id: "coin5"
   data: "components {\n"
-  "  id: \"coin1\"\n"
+  "  id: \"coin5\"\n"
   "  component: \"/world/coins/coin5.script\"\n"
   "  position {\n"
   "    x: 0.0\n"
@@ -444,7 +444,7 @@ embedded_instances {
   "    index: 0\\n"
   "    count: 1\\n"
   "  }\\n"
-  "  data: 128.0\\n"
+  "  data: 50.0\\n"
   "}\\n"
   "linear_damping: 0.0\\n"
   "angular_damping: 0.0\\n"
@@ -466,7 +466,7 @@ embedded_instances {
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/world/coins/coins.atlas\\\"\\n"
-  "default_animation: \\\"gold_solid\\\"\\n"
+  "default_animation: \\\"white_solid\\\"\\n"
   "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
@@ -495,15 +495,15 @@ embedded_instances {
     w: 1.0
   }
   scale3 {
-    x: 0.1
-    y: 0.1
+    x: 0.25
+    y: 0.25
     z: 1.0
   }
 }
 embedded_instances {
   id: "coin6"
   data: "components {\n"
-  "  id: \"coin1\"\n"
+  "  id: \"coin6\"\n"
   "  component: \"/world/coins/coin6.script\"\n"
   "  position {\n"
   "    x: 0.0\n"
@@ -544,7 +544,7 @@ embedded_instances {
   "    index: 0\\n"
   "    count: 1\\n"
   "  }\\n"
-  "  data: 128.0\\n"
+  "  data: 50.0\\n"
   "}\\n"
   "linear_damping: 0.0\\n"
   "angular_damping: 0.0\\n"
@@ -566,7 +566,7 @@ embedded_instances {
   "  id: \"sprite\"\n"
   "  type: \"sprite\"\n"
   "  data: \"tile_set: \\\"/world/coins/coins.atlas\\\"\\n"
-  "default_animation: \\\"gold_solid\\\"\\n"
+  "default_animation: \\\"white_solid\\\"\\n"
   "material: \\\"/builtins/materials/sprite.material\\\"\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "\"\n"
@@ -595,8 +595,8 @@ embedded_instances {
     w: 1.0
   }
   scale3 {
-    x: 0.1
-    y: 0.1
+    x: 0.25
+    y: 0.25
     z: 1.0
   }
 }

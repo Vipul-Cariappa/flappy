@@ -1,25 +1,9 @@
 images {
-  image: "/asset/bg/alpha.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-}
-images {
-  image: "/asset/coin/black_solid.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-}
-images {
-  image: "/asset/coin/gold_solid.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-}
-images {
-  image: "/asset/coin/grey_solid.png"
+  image: "/asset/other/alpha.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 images {
   image: "/asset/coin/white_solid.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_OFF
-}
-images {
-  image: "/asset/coin/yellow_solid.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_OFF
 }
 margin: 0
