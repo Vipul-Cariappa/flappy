@@ -1,8 +1,11 @@
+require "main/constent"
+
 local speed = 120
 local startx = 175 + 350
 local restartx = 1400
 
 function init(self)
+	go.set("#sprite", "tint", GOLD)
 	local rand = math.random(-100, 100)
 	go.set_position(vmath.vector3(startx, rand, 0))
 end

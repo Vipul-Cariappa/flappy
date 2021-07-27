@@ -20,7 +20,7 @@ function init(self)
 
 	elseif theme == 3 then
 		go.set("#sprite", "tint", GREY)
-		msg.post("@render:", "clear_color", {color=WHITE})
+		msg.post("@render:", "clear_color", {color=RAINBOW})
 	end
 		
 	msg.post(".", "acquire_input_focus")
@@ -63,8 +63,8 @@ function on_message(self, message_id, message, sender)
 		label.set_text("/point#point_lobel", self.point .. "\n" .. self.coin)
 		msg.post(message.other_id, "play_animation", { id=hash("alpha")})
 	end
-
-	if message_id == hash("collision_response") and string.find(tostring(message.other_id),"coin") == nil and game_over == false then
+	
+	if message_id == hash("collision_response") and message.other_group ~= hash("coin") and game_over == false then
 
 		game_over = true
 
